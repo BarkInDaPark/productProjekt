@@ -1,5 +1,13 @@
 .container{
- width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    /* height: 100vh; makes the sign apear in the middle verticaly */
+    width: 50%;
+    align-items: center;
+    background-color: #222831;
+    
  
 }
 .h{
@@ -8,4 +16,16 @@
     box-shadow: 1px 1px 5px #00ADB5;
     text-align: center;
     padding: 10px;
+}
+.h:hover{
+    padding: 100px;
+    box-shadow: 5px 5px 10px #00ADB5;
+    margin: auto;
+    transition: 1s;
+}
+.image{
+    width: 50vw;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 3rem;
 }
