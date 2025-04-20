@@ -10,11 +10,6 @@
     background-color: #222831;
     margin-top: 0;
 }
-.renderFiveContainer{
-    /* width: 100%;
-    display: flex;
-    flex-wrap: wrap;   */
-}
 .cardContainer{
     display: flex;
     flex-direction: column;
