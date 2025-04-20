@@ -4,6 +4,11 @@
     align-items: center;
     flex-direction: column;
     background-color: #222831;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 
 }
 .listItems{
