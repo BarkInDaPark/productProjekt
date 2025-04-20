@@ -2,7 +2,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    
     gap: 16px;
+    width: 60%;
+    margin: 0 auto;
+    background-color: #222831;
+    margin-top: 0;
+}
+.renderFiveContainer{
+    /* width: 100%;
+    display: flex;
+    flex-wrap: wrap;   */
 }
 .cardContainer{
     display: flex;
@@ -10,27 +21,34 @@
     position: relative;
     border-radius: 2rem;
     align-items: center;
-    width: 300px;
-    height: 400px;
+    width: 200px;
+    height: 300px;
     border: 2px solid #00ADB5;
     box-shadow: 1px 1px 5px #00ADB5;
     background-color: #393e46;
 }
 .cardImg{
 width: 200px;
-height: 200px;
+height: 150px;
 border-radius: 2rem;
 }
 .cardHOne{
 margin-top: 2px;
+font-size: 1.3rem;
 }
 .para{
-width: 50%;
+width: 75%;
 margin-top: 2px;
-
+position: relative;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+max-width: 150px;
 }
 .cardHTwo{
     position: absolute;
     bottom: 0px;
-    left: 10px;
+    left: 0px;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }

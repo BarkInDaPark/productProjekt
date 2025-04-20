@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: 0 auto;
     /* height: 100vh; makes the sign apear in the middle verticaly */
-    width: 50%;
+    width: 60%;
     align-items: center;
     background-color: #222831;
     
@@ -24,8 +25,9 @@
     transition: 1s;
 }
 .image{
-    width: 50vw;
+    width: 59vw;
     height: 300px;
     object-fit: cover;
     border-radius: 3rem;
+    align-self: center;
 }
