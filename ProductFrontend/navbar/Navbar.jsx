@@ -6,11 +6,11 @@ function Navbar() {
     return(
         <nav className={styles.navbar}>
             <ul className={styles.listItems}>
-                <li className={styles.item}><Link to="/">Home</Link></li>
-                <li className={styles.item}><Link to="/products">Products</Link></li>
-                <li className={styles.item}><Link to="/about">About</Link></li>
-                <li className={styles.item}><Link to="/contact">Contact</Link></li>
-                <li className={styles.item}><Link to="/todo">Todo</Link></li>
+                <li className={styles.item}><Link className={styles.itemLink} to="/">Home</Link></li>
+                <li className={styles.item}><Link className={styles.itemLink} to="/products">Products</Link></li>
+                <li className={styles.item}><Link className={styles.itemLink} to="/about">About</Link></li>
+                <li className={styles.item}><Link className={styles.itemLink} to="/contact">Contact</Link></li>
+                <li className={styles.item}><Link className={styles.itemLink}to="/todo">Todo</Link></li>
             </ul>
         </nav>
 
