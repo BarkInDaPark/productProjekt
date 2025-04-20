@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #393E46;
+    width: 25%;
+    border-radius: 4rem;
+    /* align-items: center; */
+    margin-left: 50px;
+    line-height: 0;
+}
+h1{
+    margin-left: 30px;
+}
+h2{
+    margin-left: 30px;
+}
+h3{
+    margin-left: 30px;
+}
+h4{
+    margin-left: 30px;
+}

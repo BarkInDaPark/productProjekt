@@ -1,7 +1,9 @@
+import styles from './contact.module.css';
+
 function Contact() {
     return (
-        <div>
-            <h1>got problems?  Call us!</h1>
+        <div className={styles.container}>
+            <h1>Got problems?  Call us!</h1>
             <h2>+1 800 555 5555</h2>
             <h3>or email us at:</h3>
             <h3>ProductTown@ProductTown.com</h3>
