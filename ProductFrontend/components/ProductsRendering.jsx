@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import { useNavigate } from 'react-router-dom';
 
 
-function  ProductsRendering({products, setProducts, setClickedProduct}) {
+function  ProductsRendering({products, setProducts, setClickedProduct, renderFive}) {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     
@@ -19,7 +19,19 @@ function  ProductsRendering({products, setProducts, setClickedProduct}) {
     return(
         <div className={styles.container}>
             <FetchData  setProducts={setProducts} setLoading={setLoading}/>
+            
+            
             {loading ? <h1>Loading...</h1> : 
+            renderFive ? 
+            products.slice(0, 5).map((product) => (
+                <div className={styles.cardContainer} onClick={() => handleClick(product)} key={product._id}>
+                    <img className={styles.cardImg} src={product.imageUrl} />
+                    <h1 className={styles.cardHOne}>{product.name}</h1>
+                    <p className={styles.para}>{product.description}</p>
+                    <h1 className={styles.cardHTwo}>{product.price}$</h1>
+                </div>
+                ))
+                :
             products.map((product) => (
                 <div className={styles.cardContainer} onClick={() => handleClick(product)} key={product._id}>
                     <img className={styles.cardImg} src={product.imageUrl} />

@@ -7,7 +7,7 @@ function Products() {
     return (
         <div>
             <h1>Our excellent products:</h1>
-            <ProductsRendering  products = {products} setProducts={setProducts} setClickedProduct={setClickedProduct}/>
+            <ProductsRendering  products = {products} setProducts={setProducts} setClickedProduct={setClickedProduct} renderFive={false}/>
         </div>
     )
 }
