@@ -1,0 +1,48 @@
+.outerContainer{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.innerContainer{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 10px;
+
+}
+.innerInnerContainer{
+    /* display:flex;
+    flex-direction: column;
+    flex: 1; */
+}
+.cardImg{
+    width: 50%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.cardHOne{
+    margin: 0;
+    font-size: 2rem;
+}
+.para{
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.cardHTwo{
+    position: absolute;
+    bottom: 0;
+}
+.paraTwo{
+    font-size: small;
+    margin: 0;
+    color: gray;
+}

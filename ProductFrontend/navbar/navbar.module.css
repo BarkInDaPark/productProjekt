@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: blanchedalmond;
+
+}
+.listItems{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    
+}
+.item{
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 1px solid #000;
+    border-radius: 1rem;
+}
