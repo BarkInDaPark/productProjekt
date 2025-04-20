@@ -1,0 +1,11 @@
+.container{
+ width: 45%;
+ 
+}
+.h{
+    background-color: #393E46;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 5px #00ADB5;
+    text-align: center;
+    padding: 10px;
+}
