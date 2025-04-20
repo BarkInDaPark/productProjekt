@@ -8,6 +8,7 @@ import Contact from '../pages/Contact.jsx';
 import Products from '../pages/Products.jsx';
 import Product from '../pages/Product.jsx';
 
+import './global.css';
 
 const Layout = () => {
   return (
