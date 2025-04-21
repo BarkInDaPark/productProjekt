@@ -32,6 +32,7 @@
     cursor: pointer;
 }
 .cardContainerWeeklyOffer{
+    position: relative;
     border-radius: 2rem;
     width: 200px;
     height: 300px;
@@ -65,4 +66,20 @@ max-width: 150px;
     left: 0px;
     margin-left: 5px;
     margin-bottom: 5px;
+}
+.cardHTwoWeeklyOffer{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    text-decoration: line-through;
+}
+.cardHTwoWeeklyOfferPrice{
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    color: red;
 }

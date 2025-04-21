@@ -30,7 +30,8 @@ function  ProductsRendering({products, setProducts, setClickedProduct, renderFiv
                     <img className={styles.cardImg} src={product.imageUrl} />
                     <h1 className={styles.cardHOne}>{product.name}</h1>
                     <p className={styles.para}>{product.description}</p>
-                    <h1 className={styles.cardHTwo}>{product.price}$</h1>
+                    <h1 className={styles.cardHTwoWeeklyOfferPrice}>{product.price*0.70}$</h1>
+                    <h1 className={styles.cardHTwoWeeklyOffer}>{product.price}$</h1>
                 </div>
                 ))
                 :
