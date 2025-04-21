@@ -7,8 +7,8 @@ function Products() {
     const[clickedProduct, setClickedProduct] = useState({});
     return (
         <div>
-            <div>
-                <h1>Our excellent products:</h1>
+            <div className={styles.innerContainer}>
+                <h1 className={styles.innerH}>Our excellent products:</h1>
             </div>
             <ProductsRendering  products = {products} setProducts={setProducts} setClickedProduct={setClickedProduct} renderFive={false}/>
         </div>
