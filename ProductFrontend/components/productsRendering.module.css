@@ -10,17 +10,36 @@
     background-color: #222831;
     margin-top: 0;
 }
+.containerFive{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+}
 .cardContainer{
     display: flex;
     flex-direction: column;
     position: relative;
-    border-radius: 2rem;
     align-items: center;
+    border-radius: 2rem;
     width: 200px;
     height: 300px;
     border: 2px solid #00ADB5;
     box-shadow: 1px 1px 5px #00ADB5;
     background-color: #393e46;
+    cursor: pointer;
+}
+.cardContainerWeeklyOffer{
+    border-radius: 2rem;
+    width: 200px;
+    height: 300px;
+    border: 2px solid #00ADB5;
+    box-shadow: 1px 1px 5px #00ADB5;
+    background-color: #393e46;
+    margin-left: 20px;
+    cursor: pointer;
 }
 .cardImg{
 width: 200px;
