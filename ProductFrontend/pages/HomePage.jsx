@@ -17,7 +17,7 @@ function Homepage(){
             </div>
             <h1>Weekly offers:</h1>
             <div>
-            <ProductsRendering  products = {products} setProducts={setProducts} setClickedProduct={setClickedProduct} renderFive={true}/>
+            <ProductsRendering  products = {products} setProducts={setProducts} setClickedProduct={setClickedProduct} renderFour={true}/>
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import { useNavigate } from 'react-router-dom';
 
 
-function  ProductsRendering({products, setProducts, setClickedProduct, renderFive: renderWeeklyOffer}) {
+function  ProductsRendering({products, setProducts, setClickedProduct, renderFour: renderWeeklyOffer}) {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     
