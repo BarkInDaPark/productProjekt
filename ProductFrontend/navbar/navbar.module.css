@@ -9,6 +9,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+    border-radius: 0rem 0rem 2rem 2rem;
 
 }
 .listItems{
