@@ -9,7 +9,7 @@ import Products from '../pages/Products.jsx';
 import Product from '../pages/Product.jsx';
 
 import './global.css';
-import Sidebar from '../navbar/sidebar.jsx';
+import Sidebar from '../navbar/Sidebar.jsx';
 
 const Layout = () => {
   return (
@@ -40,6 +40,10 @@ const router = createBrowserRouter([{
       path: 'products',
       element: <div><Sidebar /><Products /></div>,
       
+    },
+    {
+      path: 'products/:id',
+      element: <div><Sidebar /><Products /></div>
     },
     {
       path: 'product/:id',
