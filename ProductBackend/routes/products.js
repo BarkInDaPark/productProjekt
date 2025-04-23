@@ -18,6 +18,7 @@ router.get('/:id', getProducts, (req, res) => {
     res.json(res.products);
 });
 
+//get all from category
 router.get('/category/:category', getCategory, async (req, res) => {
     res.json(res.products);
 });
@@ -50,7 +51,7 @@ router.post('/', async(req, res) => {
 });
 
 
-
+//input into db
 router.put('/:id', getProducts, async (req,res) => {
     if(req.body.name != null){
         res.products.name = req.body.name;
@@ -76,6 +77,7 @@ router.put('/:id', getProducts, async (req,res) => {
     };
 });
 
+//delete from db
 router.delete('/:id', getProducts, async (req, res) =>{
     try{
         await res.products.deleteOne();
