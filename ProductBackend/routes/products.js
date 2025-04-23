@@ -18,6 +18,10 @@ router.get('/:id', getProducts, (req, res) => {
     res.json(res.products);
 });
 
+router.get('/category/:category', getCategory, async (req, res) => {
+    res.json(res.products);
+});
+
 router.post('/', async(req, res) => {
     const products = req.body;
 
@@ -43,21 +47,9 @@ router.post('/', async(req, res) => {
             res.status(400).json({ message: error.message + 'bad data'});
         }
     }
-    // const product = new Product({
-    //     name: req.body.name,
-    //     price: req.body.price,
-    //     description: req.body.description,
-    //     category: req.body.category,
-    //     imageUrl: req.body.imageUrl
-    // });
-
-    // try{
-    //     const newProduct = await product.save();
-    //     res.status(201).json(newProduct);
-    // } catch (error) {
-    //     res.status(400).json({ message: error.message + ' bad data'});
-    // };
 });
+
+
 
 router.put('/:id', getProducts, async (req,res) => {
     if(req.body.name != null){
@@ -111,5 +103,21 @@ async function getProducts(req, res, next) {
     res.products = products;
     next();
 };
+
+async function getCategory(req, res, next) {
+    let products;
+
+    try{
+        const products = await Product.find({category: req.params.category});
+        if(products === null){
+            return res.status(404).json({ message: 'cannot find product with this name'});
+        }
+        res.json(products);
+        // next();
+    } catch (error) {
+        return res.status(500).json({ message: error.message + 'internal server error'});
+    }
+    
+}
 
 module.exports = router;
