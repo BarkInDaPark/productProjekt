@@ -18,11 +18,17 @@ router.get('/:id', getProducts, (req, res) => {
     res.json(res.products);
 });
 
+//get all from search word
+router.get('/search/:search', getSearch, (req,res) => {
+
+});
+
 //get all from category
 router.get('/category/:category', getCategory, async (req, res) => {
     res.json(res.products);
 });
 
+//post items
 router.post('/', async(req, res) => {
     const products = req.body;
 
@@ -83,11 +89,27 @@ router.delete('/:id', getProducts, async (req, res) =>{
         await res.products.deleteOne();
         res.json({message: 'product deleted'});
     } catch (error) {
+        console.log('error');
         res.status(500).json({ message: 'internal server error'});
     };
 });
 
+//find all with the search word.
+async function getSearch(req, res, next){
 
+    try{
+        console.log("Search parameter:", JSON.stringify(req.params.search, null, 2));
+        console.log(req.params.search);
+        const products = await Product.find({name: { $regex: req.params.search, $options: 'i'} });
+        if(products === null){
+            return res.status(404).json({message: 'cannot find any product with that name'})
+        }
+        console.log(products.length)
+        res.json(products);
+    } catch (error) {
+        return res.status(500).json({message: error.message + 'internal server error'});
+    }
+}
 
 //middleware function to get product by id
 async function getProducts(req, res, next) {
@@ -107,7 +129,7 @@ async function getProducts(req, res, next) {
 };
 
 async function getCategory(req, res, next) {
-    let products;
+    // let products;
 
     try{
         const products = await Product.find({category: req.params.category});
