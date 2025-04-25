@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 function  FetchData({setProducts, setLoading}) {
     const { id } = useParams();
-    const category = id ? `/${id}` : '/';0
+    const category = id ? `/${id}` : '/';
 
     useEffect(() =>{
         
