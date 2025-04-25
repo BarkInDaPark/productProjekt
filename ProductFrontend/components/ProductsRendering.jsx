@@ -7,6 +7,9 @@ import { useNavigate } from 'react-router-dom';
 function  ProductsRendering({products, setProducts, setClickedProduct, renderFour: renderWeeklyOffer}) {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    useEffect(() => {
+        
+    },[])
     
     const handleClick = (product) => {
         console.log("product clicked: ", product._id);
