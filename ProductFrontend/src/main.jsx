@@ -7,9 +7,10 @@ import About from '../pages/About.jsx';
 import Contact from '../pages/Contact.jsx';
 import Products from '../pages/Products.jsx';
 import Product from '../pages/Product.jsx';
-
-import './global.css';
 import Sidebar from '../navbar/Sidebar.jsx';
+import Search from '../pages/Search.jsx';
+import './global.css';
+
 
 const Layout = () => {
   return (
@@ -48,7 +49,13 @@ const router = createBrowserRouter([{
     {
       path: 'product/:id',
       element: <Product />
+    },
+    {
+      path: 'search/:id',
+      element: <Search />
     }
+
+
 
   ]
 }])
