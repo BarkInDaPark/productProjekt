@@ -25,10 +25,12 @@
 .list{
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
+    width: 100%;
 }
 .listItems{
     list-style: none;
-    padding: 10px 30px 10px 100px;
+    max-width: 100%;
+    padding: 10px 0px 10px 0px;
     margin: 20px 0px 20px 0px;
     border: 1px solid #00ADB5;
     border-radius: 1rem;
@@ -36,6 +38,7 @@
     background-color: #393e46;
     color: #EEEEEE;
     font-size: 20px;
+    text-align: center;
     font-weight: bold;
     cursor: pointer;
 }
