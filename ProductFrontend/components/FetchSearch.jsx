@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 function FetchSearch({setProduct}){
 
-    const id = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
             const fetchProduct = async () => {

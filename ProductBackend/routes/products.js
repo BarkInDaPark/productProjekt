@@ -19,9 +19,11 @@ router.get('/:id', getProducts, (req, res) => {
 });
 
 //get all from search word
-router.get('/search/:search', getSearch, (req,res) => {
+router.get('/search/:search', getSearch);
 
-});
+// router.get('/search/:search', getSearch, (req,res) => {
+
+// });
 
 //get all from category
 router.get('/category/:category', getCategory, async (req, res) => {
@@ -98,7 +100,7 @@ router.delete('/:id', getProducts, async (req, res) =>{
 async function getSearch(req, res, next){
 
     try{
-        console.log("Search parameter:", JSON.stringify(req.params.search, null, 2));
+        console.log("Search parameter:", JSON.stringify(req.params, null, 2));
         console.log(req.params.search);
         const products = await Product.find({name: { $regex: req.params.search, $options: 'i'} });
         if(products === null){
@@ -116,6 +118,7 @@ async function getProducts(req, res, next) {
     let products;
 
     try{
+        console.log(req.params.id)
         products = await Product.findById(req.params.id);
         if(products == null){
             return res.status(404).json({ message: 'cannot find product with this id'});
