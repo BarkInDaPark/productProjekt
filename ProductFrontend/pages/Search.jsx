@@ -1,13 +1,24 @@
 import FetchSearch from '../components/fetchSearch';
-import styles from './search.module.css'
+import styles from '../components/productsRendering.module.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 
 function Search(){
 
-const [product, setProduct] = useState({});
+    const navigate = useNavigate();
+
+    const handleClick = (product) => {
+        console.log("product clicked: ", product._id);
+        // setClickedProduct(product);
+        navigate(`/product/${product._id}`);
+
+
+    };
+
+const [product, setProduct] = useState([]);
 
     return(
-        <div className={styles.outerContainer}>
+        <div className={styles.container}>
             <FetchSearch setProduct={setProduct}/>
              {!product ? <h1>Loading...</h1> :
                 product.map((product) => (
@@ -16,7 +27,7 @@ const [product, setProduct] = useState({});
                         <h1 className={styles.cardHOne}>{product.name}</h1>
                         <p className={styles.para}>{product.description}</p>
                         <h1 className={styles.cardHTwo}>{product.price}$</h1>
-                    </div>))}
+                    </div>))}2
                          
         </div>
     )
