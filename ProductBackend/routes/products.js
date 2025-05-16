@@ -100,13 +100,13 @@ router.delete('/:id', getProducts, async (req, res) =>{
 async function getSearch(req, res, next){
 
     try{
-        console.log("Search parameter:", JSON.stringify(req.params, null, 2));
-        console.log(req.params.search);
+        // console.log("Search parameter:", JSON.stringify(req.params, null, 2));
+        console.log('request search: "' + req.params.search +'"');
         const products = await Product.find({name: { $regex: req.params.search, $options: 'i'} });
         if(products === null){
             return res.status(404).json({message: 'cannot find any product with that name'})
         }
-        console.log(products.length)
+        console.log('entities found: ' + products.length)
         res.json(products);
     } catch (error) {
         return res.status(500).json({message: error.message + 'internal server error'});
