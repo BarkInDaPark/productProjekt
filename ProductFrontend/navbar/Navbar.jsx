@@ -13,14 +13,13 @@ function Navbar() {
         window.location.reload();
     };
     function handleSubmit(e) {
-        e.preventDefault();
-
+        //e.preventDefault();
+        // window.location.reload();
         const form = e.target;
         const formData = new FormData(form);    
         const formJson = Object.fromEntries(formData.entries());
-        console.log(formJson.myInput);
         
-        navigate(`/search/${formJson.myInput}`);
+        navigate(`/search/${formJson.search}`);
 
 
         
@@ -36,10 +35,10 @@ function Navbar() {
             </ul>
             <div className={styles.searchContainer}>
             <form onSubmit={handleSubmit}>
-                <input className={styles.searchBar} name="myInput" type="text" placeholder="Search..."/>
+                <input className={styles.searchBar} name="search" type="text" placeholder="Search..."/>
                 <button type="submit" className={styles.searchButton}>
                     <img className={styles.searchImage} src={searchIcon}/>
-                </button>4
+                </button>
             </form>
             </div>
         </nav>
