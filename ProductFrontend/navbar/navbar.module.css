@@ -92,6 +92,8 @@
     border-radius: 1rem;
 }
 .searchItemLink{
+    text-decoration: none;
+    color: black;
 
 }
 .searchItemImage{
