@@ -1,7 +1,7 @@
 add sidebar for products //CHECK
 make sidebar buttons work //CHECK
 make product button work after useing category buttons //CHECK
-fill the homepage
+fill the homepage //CHECK
 fix colors //CHECK
 upload projekt to github //CHECK
 fix background picture //CHECK
@@ -9,4 +9,5 @@ fix navbar to be sticky // CHECK
 add searchbar to navbar //CHECK
 make searchbar work // CHECK
 fix the width of products page //CHECK
+add polling
 shopping cart
