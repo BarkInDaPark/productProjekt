@@ -71,3 +71,35 @@
     width: 20px;
     height: 20px;
 }
+.searchList{
+    width: 300px;
+    background-color: #393e46;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    box-shadow: 1px 5px 5px #00ADB5;
+    border-radius: 1rem;
+    margin: 0;
+}
+.searchItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EEEEEE;
+    list-style: none;
+    margin: 5px 0 5px 0;
+    box-shadow: 1px 1px 5px #00ADB5;
+    border-radius: 1rem;
+}
+.searchItemLink{
+
+}
+.searchItemImage{
+    width: 63px;
+    height: 63px;
+    border-radius: 1rem 0 0 1rem;
+}
+.searchItemPrice{
+    font: 300 20px 'Poppins', sans-serif;
+    align-self: flex-end;
+}

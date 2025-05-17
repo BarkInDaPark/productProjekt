@@ -15,7 +15,7 @@ function FetchSingleData({setProduct, id}) {
         }
 
         fetchProduct();
-    },[]) 
+    },[id]) 
     return null;
 }
 export default FetchSingleData;

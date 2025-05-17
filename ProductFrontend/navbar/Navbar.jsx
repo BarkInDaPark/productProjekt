@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import React from "react";
 import styles from'./navbar.module.css';
 import searchIcon from '../assets/magnifyingGlass.png';
-import FetchSearch from "../components/fetchSearch";
 
 
 function Navbar() {
@@ -26,19 +25,34 @@ function Navbar() {
         const formJson = Object.fromEntries(formData.entries());
         
         navigate(`/search/${formJson.search}`);
+    };
 
-
-        
+    const fetchSearch = async (searchInput) => {
+        try {
+            const respone = await fetch(`http://localhost:3000/api/products/search/${searchInput}`);
+            const data = await respone.json();
+            await setProduct(data);
+            console.log('product length: ' + product.length);
+        } catch (error) {
+            console.log('Error fetching product:', error);
+        }
     }
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            if (searchInput !== pollingValue){
-                setPollingValue(searchInput);
-                console.log('product length: ' + product.length)
+        // const interval = setInterval(() => {
+        //     if (searchInput !== pollingValue){
+        //         setPollingValue(searchInput);
+        //         console.log('product length: ' + product.length)
 
-            }
-        }, 500)
+        //     } else {
+        //         return;
+        //     }
+        // }, 500)
+        if(searchInput !== pollingValue && searchInput.length > 0){
+            setPollingValue(searchInput);
+            fetchSearch(searchInput);
+            
+        }
     },[searchInput]);
 
     return(
@@ -61,10 +75,20 @@ function Navbar() {
                 <button className={styles.searchButton} type="submit">
                     <img className={styles.searchImage} src={searchIcon}/>
                 </button>
-                {product.length === 0 ? null :
-                <ul>
-                    <li>{product.name}</li>
+                {product.length > 0 && Array.isArray(product) ? 
+                <ul className={styles.searchList}>
+                    {product.slice(0, 5).map((prod) => (
+                        <li key = {prod.id} className={styles.searchItem}>
+                            <img className={styles.searchItemImage} src={prod.imageUrl}/>
+                            <Link className={styles.searchItemLink} to={`/product/${prod._id}`}>
+                                {prod.name}
+                            </Link>
+                            <p className={styles.searchItemPrice}>{prod.price}$</p>
+                        </li>
+                    ))}
                 </ul>
+                :
+                <h1>Loading...</h1>
                 }
             </form>
             </div>
