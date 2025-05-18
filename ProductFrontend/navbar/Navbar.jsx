@@ -78,7 +78,7 @@ function Navbar() {
                 {product.length > 0 && Array.isArray(product) ? 
                 <ul className={styles.searchList}>
                     {product.slice(0, 5).map((prod) => (
-                        <li key = {prod.id} className={styles.searchItem}>
+                        <li key = {prod.id} className={styles.searchItem} onClick={() => {handleClick()}}>
                             <img className={styles.searchItemImage} src={prod.imageUrl}/>
                             <Link className={styles.searchItemLink} to={`/product/${prod._id}`}>
                                 {prod.name}
