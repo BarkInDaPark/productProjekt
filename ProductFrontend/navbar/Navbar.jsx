@@ -17,6 +17,13 @@ function Navbar() {
     const handleClick = () => {
         window.location.reload();
     };
+
+    const handleSearch = () => {
+        setSearchInput('');
+        setPollingValue('');
+        setProduct([]);
+    };
+
     function handleSubmit(e) {
         //e.preventDefault();
         // window.location.reload();
@@ -78,7 +85,7 @@ function Navbar() {
                 {product.length > 0 && Array.isArray(product) ? 
                 <ul className={styles.searchList}>
                     {product.slice(0, 5).map((prod) => (
-                        <li key = {prod.id} className={styles.searchItem} onClick={() => {handleClick()}}>
+                        <li key = {prod.id} className={styles.searchItem} onClick={() => {handleSearch()}}>
                             <img className={styles.searchItemImage} src={prod.imageUrl}/>
                             <Link className={styles.searchItemLink} to={`/product/${prod._id}`}>
                                 {prod.name}
@@ -88,7 +95,7 @@ function Navbar() {
                     ))}
                 </ul>
                 :
-                <h1>Loading...</h1>
+                null
                 }
             </form>
             </div>
