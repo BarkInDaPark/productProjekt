@@ -4,11 +4,11 @@ import styles from "./product.module.css"
 
 import ProductRendering from "../components/ProductRendering";
 
-function Product () {
+function Product ({setShoppingCart}) {
 
     return (
         <div className={styles.outerContainer}>
-            <ProductRendering />
+            <ProductRendering setShoppingCart={setShoppingCart}/>
         </div>
     )
 };

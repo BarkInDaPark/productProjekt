@@ -4,10 +4,16 @@ import {useState} from "react";
 import styles from "./ProductRendering.module.css";
 
 
-function ProductRendering() {
+function ProductRendering({setShoppingCart}) {
     const { id } = useParams();
     console.log(id);
     const [product, setProduct] = useState({});
+
+    const handleClick = () => {
+        setShoppingCart(prev =>[...prev, product]);
+    }
+
+
 
     return (
         <div className={styles.outerContainer}>
@@ -20,6 +26,7 @@ function ProductRendering() {
                         <p className= {styles.paraTwo}>Art nr: {product._id}</p>
                         <p className={styles.para}>{product.description}</p>
                         <h1 className={styles.cardHTwo}>{product.price}$</h1>
+                        <button className={styles.addToCartButton} onClick={handleClick}>add to cart</button>
                     </div>
                     <img className={styles.cardImg} src={product.imageUrl} />
                     

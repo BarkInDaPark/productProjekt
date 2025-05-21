@@ -108,3 +108,25 @@
     font: 300 20px 'Poppins', sans-serif;
     align-self: flex-end;
 }
+.cartButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #00ADB5;
+    width: 60px;
+    height: 40px;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+}
+.cartImage{
+    width: 20px;
+    height: 20px;
+}
+.cartLink{
+    text-decoration: none;
+    color: #EEEEEE;
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -3,19 +3,21 @@ import { useState, useEffect } from "react";
 import React from "react";
 import styles from'./navbar.module.css';
 import searchIcon from '../assets/magnifyingGlass.png';
+import cartIcon from '../assets/cart.png';
 
 
-function Navbar() {
+function Navbar({shoppingCart}) {
 
     const navigate = useNavigate();
 
     const [searchInput, setSearchInput] = useState('');
     const [pollingValue, setPollingValue] = useState('');
     const [product, setProduct] = useState([]);
+    
 
     //without this, when inside a category and then pressing products on navbar the page wont refresh.
     const handleClick = () => {
-        window.location.reload();
+        //window.location.reload();
     };
 
     const handleSearch = () => {
@@ -46,15 +48,6 @@ function Navbar() {
     }
 
     useEffect(() => {
-        // const interval = setInterval(() => {
-        //     if (searchInput !== pollingValue){
-        //         setPollingValue(searchInput);
-        //         console.log('product length: ' + product.length)
-
-        //     } else {
-        //         return;
-        //     }
-        // }, 500)
         if(searchInput !== pollingValue && searchInput.length > 0){
             setPollingValue(searchInput);
             fetchSearch(searchInput);
@@ -70,6 +63,14 @@ function Navbar() {
                 <li className={styles.item}><Link className={styles.itemLink} to="/about">About</Link></li>
                 <li className={styles.item}><Link className={styles.itemLink} to="/contact">Contact</Link></li>
             </ul>
+            <div>
+                <Link className={styles.cartLink} to="/cart">
+                    <button className={styles.cartButton}>
+                        {shoppingCart.length > 0 ? shoppingCart.length : 0}
+                        <img className={styles.cartImage} src={cartIcon}/>
+                    </button>
+                </Link>
+            </div>
             <div className={styles.searchContainer}>
             <form onSubmit={handleSubmit}>
                 <input className={styles.searchBar} 
