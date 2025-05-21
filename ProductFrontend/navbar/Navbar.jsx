@@ -27,13 +27,14 @@ function Navbar({shoppingCart}) {
     };
 
     function handleSubmit(e) {
-        //e.preventDefault();
+        e.preventDefault();
         // window.location.reload();
         const form = e.target;
         const formData = new FormData(form);    
         const formJson = Object.fromEntries(formData.entries());
         
         navigate(`/search/${formJson.search}`);
+        handleSearch();
     };
 
     const fetchSearch = async (searchInput) => {
@@ -59,7 +60,7 @@ function Navbar({shoppingCart}) {
         <nav className={styles.navbar}>
             <ul className={styles.listItems}>
                 <li className={styles.item}><Link className={styles.itemLink} to="/">Home</Link></li>
-                <li className={styles.item} onClick={() => {handleClick()}}><Link className={styles.itemLink} to="/products">Products</Link></li>
+                <li className={styles.item}><Link className={styles.itemLink} to="/products">Products</Link></li>
                 <li className={styles.item}><Link className={styles.itemLink} to="/about">About</Link></li>
                 <li className={styles.item}><Link className={styles.itemLink} to="/contact">Contact</Link></li>
             </ul>
