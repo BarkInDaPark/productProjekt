@@ -10,7 +10,7 @@ function Sidebar(){
 
    const handleClick = (cat) => {
         navigate('/Products/' + cat);
-        window.location.reload();
+        //window.location.reload();
 
 
     }

@@ -32,7 +32,7 @@ function  FetchData({setProducts, setLoading}) {
 
         fetchProducts();
         console.log("Fetching products...");
-    },[]);
+    },[id]);
 
 
     return null;
