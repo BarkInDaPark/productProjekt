@@ -9,5 +9,6 @@ fix navbar to be sticky // CHECK
 add searchbar to navbar //CHECK
 make searchbar work // CHECK
 fix the width of products page //CHECK
-add polling
+add polling //CHECK
 shopping cart
+fix page not found PAGE 
