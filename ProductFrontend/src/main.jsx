@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Navbar from '../navbar/Navbar.jsx';
@@ -14,6 +14,13 @@ import Cart from '../pages/Cart.jsx';
 
 function App(){
 const [shoppingCart, setShoppingCart] = useState([]);
+
+useEffect(() => {
+  function updateShoppingCart() {
+    shoppingCart.length > 0 ? alert(shoppingCart[shoppingCart.length - 1].name + ' added to cart') : null;
+  }
+  updateShoppingCart();
+},[shoppingCart]);
 
 const Layout = () => {
   return (

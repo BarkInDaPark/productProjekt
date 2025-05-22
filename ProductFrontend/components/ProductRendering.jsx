@@ -1,18 +1,27 @@
 import FetchSingleData from "./FetchSingleData";
-import { useParams } from "react-router-dom";
-import {useState} from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import {useEffect, useState} from "react";
 import styles from "./ProductRendering.module.css";
 
 
 function ProductRendering({setShoppingCart}) {
     const { id } = useParams();
-    console.log(id);
     const [product, setProduct] = useState({});
+    const [added, setAdded] = useState(false);
+    const navigate = useNavigate();
 
     const handleClick = () => {
         setShoppingCart(prev =>[...prev, product]);
+        setAdded(true);
     }
 
+    useEffect(() => {
+        if(added){
+            setAdded(false);
+            navigate('/products');
+            console.log("added");
+        }
+    },[added])
 
 
     return (

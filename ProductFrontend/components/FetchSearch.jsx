@@ -19,7 +19,7 @@ function FetchSearch({setProduct}){
             }
     
             fetchProduct();
-        },[]) 
+        },[id]) 
         return null;
 }
 export default FetchSearch;
