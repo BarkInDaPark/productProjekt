@@ -15,12 +15,12 @@ import Cart from '../pages/Cart.jsx';
 function App(){
 const [shoppingCart, setShoppingCart] = useState([]);
 
-useEffect(() => {
-  function updateShoppingCart() {
-    shoppingCart.length > 0 ? alert(shoppingCart[shoppingCart.length - 1].name + ' added to cart') : null;
-  }
-  updateShoppingCart();
-},[shoppingCart]);
+// useEffect(() => {
+//   function updateShoppingCart() {
+//     shoppingCart.length > 0 ? alert(shoppingCart[shoppingCart.length - 1].name + ' added to cart') : null;
+//   }
+//   updateShoppingCart();
+// },[shoppingCart]);
 
 const Layout = () => {
   return (

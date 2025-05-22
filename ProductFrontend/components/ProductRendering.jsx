@@ -2,6 +2,7 @@ import FetchSingleData from "./FetchSingleData";
 import { useParams, useNavigate } from "react-router-dom";
 import {useEffect, useState} from "react";
 import styles from "./ProductRendering.module.css";
+import ToastBar from "../navbar/ToastBar";
 
 
 function ProductRendering({shoppingCart, setShoppingCart}) {
@@ -15,6 +16,7 @@ function ProductRendering({shoppingCart, setShoppingCart}) {
         setAdded(true);
     }
 
+    //this makes the page render the correct number of products in the shopping cart.
     useEffect(() => {
         if(added){
             setAdded(false);
@@ -25,6 +27,7 @@ function ProductRendering({shoppingCart, setShoppingCart}) {
 
     return (
         <div className={styles.outerContainer}>
+            {added && <ToastBar message="Product added to cart!"/>}
             <FetchSingleData setProduct={setProduct} id={id}/>
             {!product ? <h1>Loading...</h1> :
                 <div className={styles.innerContainer}>
