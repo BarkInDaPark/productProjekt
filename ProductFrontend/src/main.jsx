@@ -60,7 +60,7 @@ const router = createBrowserRouter([{
     {
       //the id here is for a single products id
       path: 'product/:id',
-      element: <Product setShoppingCart={setShoppingCart}/>
+      element: <Product shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}/>
     },
     {
       path: 'search/:id',

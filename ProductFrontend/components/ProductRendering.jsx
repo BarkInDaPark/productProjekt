@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import styles from "./ProductRendering.module.css";
 
 
-function ProductRendering({setShoppingCart}) {
+function ProductRendering({shoppingCart, setShoppingCart}) {
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [added, setAdded] = useState(false);
@@ -19,7 +19,6 @@ function ProductRendering({setShoppingCart}) {
         if(added){
             setAdded(false);
             navigate('/products');
-            console.log("added");
         }
     },[added])
 
