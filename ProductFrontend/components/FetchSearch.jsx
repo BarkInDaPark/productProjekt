@@ -17,7 +17,7 @@ function FetchSearch({setProduct}){
                     console.log('Error fetching product:', error);
                 };
             }
-    
+            
             fetchProduct();
         },[id]) 
         return null;

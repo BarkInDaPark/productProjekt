@@ -32,8 +32,10 @@ function Navbar({shoppingCart}) {
         const form = e.target;
         const formData = new FormData(form);    
         const formJson = Object.fromEntries(formData.entries());
+        if(formJson.search.length !== 0){
+            navigate(`/search/${formJson.search}`);
+        }
         
-        navigate(`/search/${formJson.search}`);
         handleSearch();
     };
 
