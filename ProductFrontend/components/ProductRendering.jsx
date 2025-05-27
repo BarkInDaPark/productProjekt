@@ -9,25 +9,24 @@ function ProductRendering({shoppingCart, setShoppingCart}) {
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [added, setAdded] = useState(false);
+    const [showToast, setShowToast] = useState(false);
     const navigate = useNavigate();
 
     const handleClick = () => {
         setShoppingCart(prev =>[...prev, product]);
+        
         setAdded(true);
     }
-
-    //this makes the page render the correct number of products in the shopping cart.
     useEffect(() => {
-        if(added){
-            setAdded(false);
+        if (added){
             navigate('/products');
+            setAdded(false);
         }
-    },[added])
-
-
+    }, [added])
+    
     return (
         <div className={styles.outerContainer}>
-            {added && <ToastBar message="Product added to cart!"/>}
+            
             <FetchSingleData setProduct={setProduct} id={id}/>
             {!product ? <h1>Loading...</h1> :
                 <div className={styles.innerContainer}>
