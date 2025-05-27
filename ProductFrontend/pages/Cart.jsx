@@ -31,7 +31,7 @@ function Cart({shoppingCart, setShoppingCart}) {
         </div>
             <div className={styles.checkoutContainer}>
                 <h1>total price: {totalPrice}$</h1>
-                <Link>
+                <Link to= '/checkout'>
                     <button className={styles.checkoutButton}>CheckOut</button>
                 </Link>
             </div>
