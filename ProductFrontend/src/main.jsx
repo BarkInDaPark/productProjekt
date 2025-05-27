@@ -15,20 +15,7 @@ import ToastBar from '../navbar/ToastBar.jsx';
 
 function App(){
 const [shoppingCart, setShoppingCart] = useState([]);
-const [added, setAdded] = useState(false);
-
-useEffect(() => {
-  console.log("ShoppingCart updated");
-  setAdded(true);
-  setTimeout(() => setAdded(false), 2500); 
-}, [shoppingCart])
-
-// useEffect(() => {
-//   function updateShoppingCart() {
-//     shoppingCart.length > 0 ? alert(shoppingCart[shoppingCart.length - 1].name + ' added to cart') : null;
-//   }
-//   updateShoppingCart();
-// },[shoppingCart]);
+const [cartLength, setCartLength] = useState(0);
 
 const Layout = () => {
   return (
@@ -58,7 +45,7 @@ const router = createBrowserRouter([{
     },
     {
       path: 'products',
-      element: <div><Sidebar /><Products shoppingCart={shoppingCart}/></div>,
+      element: <div><Sidebar /><Products shoppingCart={shoppingCart} cartLength={cartLength} setCartLength={setCartLength}/></div>,
       
     },
     {
