@@ -11,6 +11,7 @@ import Sidebar from '../navbar/Sidebar.jsx';
 import Search from '../pages/Search.jsx';
 import './global.css';
 import Cart from '../pages/Cart.jsx';
+import Checkout from '../pages/Checkout.jsx';
 
 function App(){
 const [shoppingCart, setShoppingCart] = useState([]);
@@ -64,6 +65,10 @@ const router = createBrowserRouter([{
     {
       path: 'cart',
       element: <Cart shoppingCart={shoppingCart} setCartLength={setCartLength}/>
+    },
+    {
+      path: 'checkout',
+      element: <Checkout />
     }
 
 
