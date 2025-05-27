@@ -11,9 +11,17 @@ import Sidebar from '../navbar/Sidebar.jsx';
 import Search from '../pages/Search.jsx';
 import './global.css';
 import Cart from '../pages/Cart.jsx';
+import ToastBar from '../navbar/ToastBar.jsx';
 
 function App(){
 const [shoppingCart, setShoppingCart] = useState([]);
+const [added, setAdded] = useState(false);
+
+useEffect(() => {
+  console.log("ShoppingCart updated");
+  setAdded(true);
+  setTimeout(() => setAdded(false), 2500); 
+}, [shoppingCart])
 
 // useEffect(() => {
 //   function updateShoppingCart() {
@@ -25,6 +33,7 @@ const [shoppingCart, setShoppingCart] = useState([]);
 const Layout = () => {
   return (
     <div>
+      
       <Navbar shoppingCart={shoppingCart}/>
       <Outlet />
     </div>
@@ -49,7 +58,7 @@ const router = createBrowserRouter([{
     },
     {
       path: 'products',
-      element: <div><Sidebar /><Products /></div>,
+      element: <div><Sidebar /><Products shoppingCart={shoppingCart}/></div>,
       
     },
     {
