@@ -1,0 +1,68 @@
+.outerContainer{
+    background-color: #222831;
+    border-radius: 0 0 2rem 2rem;
+    width: 60%;
+    margin: 0 auto;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* height: 100vh; makes the sign apear in the middle verticaly */
+    align-items: center;
+    
+}
+.cartList{
+    width: 90%;
+    padding-left: 5px;
+}
+.cartItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EEEEEE;
+    list-style: none;
+    width: 100%;
+    margin: 5px 0 5px 0;
+    box-shadow: 1px 1px 5px #00ADB5;
+    border-radius: 1rem;
+}
+.cartItemLink{
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: 600;
+
+}
+.cartItemImage{
+    width: 100px;
+    height: 100px;
+    border-radius: 1rem 0 0 1rem;
+}
+.cartItemPrice{
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+.checkoutContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 95%;
+    padding: 20px;
+}
+.checkoutButton{
+    align-self:auto;
+    width: 200px;
+    height: 50px;
+    background-color: #00ADB5;
+    color: white;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
