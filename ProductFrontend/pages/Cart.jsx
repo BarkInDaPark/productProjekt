@@ -14,7 +14,7 @@ function Cart({shoppingCart, setShoppingCart}) {
     }
 
     useEffect(() => {
-        const total = cart.reduce((sum, prod) => sum + prod.price, 0)
+        const total = cart.reduce((sum, prod) => sum + prod.price * prod.quantity, 0)
         setTotalPrice(total);
         setShoppingCart(cart);
         // shoppingCart.map((prod) => setTotalPrice((prev) => prev + prod.price));
@@ -31,8 +31,8 @@ function Cart({shoppingCart, setShoppingCart}) {
                             <Link className={styles.cartItemLink} to={`/product/${prod._id}`}>
                                 {prod.name}
                             </Link>
-                            <p className={styles.cartItemPrice}>{prod.price}$</p>
-                            <p>qty:</p>
+                            <p className={styles.cartItemPrice}>{prod.price * prod.quantity}$</p>
+                            <p>qty:{prod.quantity}</p>
                             <button className={styles.trashButton} onClick={() => {handleClick(prod)}}>
                                 <img src={trashCan} className={styles.trashImg}/>
                             </button>

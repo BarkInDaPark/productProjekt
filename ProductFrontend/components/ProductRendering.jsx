@@ -13,7 +13,19 @@ function ProductRendering({shoppingCart, setShoppingCart}) {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        setShoppingCart(prev =>[...prev, product]);
+        const exists = shoppingCart.some(obj => obj._id === product._id);
+        if(exists) {
+            setShoppingCart(prev =>
+                prev.map(obj =>
+                    obj._id === product._id
+                    ? {...obj, quantity: obj.quantity + 1}
+                    : obj
+                )
+            )
+        } else{
+            setShoppingCart(prev =>[...prev, {...product, quantity: 1}]);
+        }
+        
         
         setAdded(true);
     }
