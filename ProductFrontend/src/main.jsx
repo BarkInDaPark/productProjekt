@@ -17,10 +17,13 @@ function App(){
 const [shoppingCart, setShoppingCart] = useState([]);
 const [cartLength, setCartLength] = useState(0);
 
+useEffect(() => {
+  setCartLength(shoppingCart.length);
+},[shoppingCart]);
+
 const Layout = () => {
   return (
     <div>
-      
       <Navbar shoppingCart={shoppingCart}/>
       <Outlet />
     </div>
@@ -64,7 +67,7 @@ const router = createBrowserRouter([{
     },
     {
       path: 'cart',
-      element: <Cart shoppingCart={shoppingCart} setCartLength={setCartLength}/>
+      element: <Cart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} setCartLength={setCartLength}/>
     },
     {
       path: 'checkout',

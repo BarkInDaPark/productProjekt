@@ -1,28 +1,43 @@
 import {Link} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import styles from './cart.module.css';
+import trashCan from '../assets/trashCan.svg';
 function Cart({shoppingCart, setShoppingCart}) {
 
     const [totalPrice, setTotalPrice] = useState(0);
+    const [deleted, setDeleted] = useState(false);
+    const [cart, setCart] = useState(shoppingCart);
+
+    const handleClick = (e) => {
+        setCart(prev =>
+            prev.filter(prod => prod._id !== e._id));
+    }
 
     useEffect(() => {
-        setTotalPrice(0);
-        shoppingCart.map((prod) => setTotalPrice((prev) => prev + prod.price));
-    }, [shoppingCart]);
+        const total = cart.reduce((sum, prod) => sum + prod.price, 0)
+        setTotalPrice(total);
+        setShoppingCart(cart);
+        // shoppingCart.map((prod) => setTotalPrice((prev) => prev + prod.price));
+    }, [cart]);
 
     return (
         <div className={styles.outerContainer}>
             <div className={styles.container}>
-            {shoppingCart.length > 0 ? 
+            {cart.length > 0 ? 
                 <ul className={styles.cartList}>
-                    {shoppingCart.map((prod) => (
-                        <li key = {prod.id} className={styles.cartItem} onClick={() => {handleSearch()}}>
+                    {cart.map((prod) => (
+                        <li key = {prod._id} className={styles.cartItem}>
                             <img className={styles.cartItemImage} src={prod.imageUrl}/>
                             <Link className={styles.cartItemLink} to={`/product/${prod._id}`}>
                                 {prod.name}
                             </Link>
                             <p className={styles.cartItemPrice}>{prod.price}$</p>
+                            <p>qty:</p>
+                            <button className={styles.trashButton} onClick={() => {handleClick(prod)}}>
+                                <img src={trashCan} className={styles.trashImg}/>
+                            </button>
                         </li>
+                        
                     ))}
                 </ul>
                 :

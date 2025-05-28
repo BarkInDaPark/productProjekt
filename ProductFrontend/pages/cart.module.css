@@ -66,3 +66,12 @@
     border: none;
     cursor: pointer;
 }
+.trashButton{
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+.trashImg{
+    
+}
