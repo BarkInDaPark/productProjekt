@@ -1,8 +1,20 @@
 import styles from './checkout.module.css';
+
+
+
 function Checkout(){
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const formJson = Object.fromEntries(formData.entries());
+        console.log('Form submitted:', formJson);
+
+    }
     return (
         <div className={styles.checkoutContainer}>
-            <form className={styles.checkoutForm}>
+            <form className={styles.checkoutForm} onSubmit={handleSubmit}>
                 <p className={styles.inputParagraph}>first name:</p>
                 <input name='firstName' type='text' placeholder='First Name' required  className={styles.input}/>
                 <p className={styles.inputParagraph}>last name:</p>
