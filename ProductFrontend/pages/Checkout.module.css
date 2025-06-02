@@ -3,11 +3,18 @@
 
     background-color: #222831;
     border-radius: 0 0 2rem 2rem;
-    width: 60%;
+    width: 20%;
     margin: 0 auto;
 }
 .checkoutForm{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+.checkoutFormInfo{
+     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -22,7 +29,7 @@
 .input{
     display: flex;
     align-self: flex-start;
-    width: 25%;
+    width: 90%;
     height: 20px;
     margin-bottom: 10px;
     border-radius: 0 1rem 1rem 0;
@@ -37,4 +44,18 @@
     background-color: #393e46;
     box-shadow: 1px 1px 5px #00ADB5;
     margin-bottom: 30px;
+}
+.cardInput{
+    border-radius: 1rem 0 0 1rem;
+    height: 20px;
+    width: 90%;;
+}
+.checkoutFormCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    
+    /* padding: 20px; */
 }
