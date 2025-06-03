@@ -68,7 +68,7 @@ function Checkout({shoppingCart, setShoppingCart, setOrderId}) {
                     <p className={styles.inputParagraph}>city:</p>
                     <input name='city' type='text' placeholder='City' required className={styles.input}/>
                     <p className={styles.inputParagraph}>postal code:</p>
-                    <input name='postalCode' type='text' placeholder='Postal Code' required className={styles.input}/>
+                    <input name='postalCode' type='text' placeholder='Postal Code' required className={styles.inputShort}/>
                     <p className={styles.inputParagraph}>country:</p>
                     <input name='country' type='text' placeholder='Country' required className={styles.input}/>
                     <p className={styles.inputParagraph}>phone number:</p>
@@ -81,9 +81,9 @@ function Checkout({shoppingCart, setShoppingCart, setOrderId}) {
                     <p className={styles.cardParagraph}>Card number:</p>
                     <input name='cardNumber' type='text' placeholder='Card Number' required className={styles.cardInput}/>
                     <p className={styles.cardParagraph}>exp date:</p>
-                    <input name='cardExp' type='text' placeholder='exp date' required className={styles.cardInput}/>
+                    <input name='cardExp' type='text' placeholder='exp date' required className={styles.cardInputShort}/>
                     <p className={styles.cardParagraph}>ccv:</p>
-                    <input name='cardCcv' type='text' placeholder='ccv' required className={styles.cardInput}/>
+                    <input name='cardCcv' type='text' placeholder='ccv' required className={styles.cardInputShort}/>
                 </div>
                 
             </form>
