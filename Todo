@@ -11,6 +11,5 @@ make searchbar work // CHECK
 fix the width of products page //CHECK
 add polling //CHECK
 shopping cart // CHECK
-add order in db
-
+add order in db //CHECK
 fix page not found PAGE 
