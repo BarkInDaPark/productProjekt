@@ -17,8 +17,11 @@ router.post('/', async(req, res) =>  {
     order = req.body;
 
     try{
-        const savedOrder = await Order.save(order);
-        res.status(201).json()
+        const savedOrder = await Order.create(order);
+        res.status(201).json({
+            message: 'order created',
+            orderId: savedOrder._id,
+        })
     } catch (error) {
         res.status(400).json({message: error.message + 'bad data'})
     }
