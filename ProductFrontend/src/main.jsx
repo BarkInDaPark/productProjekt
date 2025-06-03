@@ -12,10 +12,12 @@ import Search from '../pages/Search.jsx';
 import './global.css';
 import Cart from '../pages/Cart.jsx';
 import Checkout from '../pages/Checkout.jsx';
+import OrderPlaced from '../pages/OrderPlaced.jsx';
 
 function App(){
 const [shoppingCart, setShoppingCart] = useState([]);
 const [cartLength, setCartLength] = useState(0);
+const [orderId, setOrderId] = useState(0);
 
 useEffect(() => {
   setCartLength(shoppingCart.length);
@@ -71,7 +73,11 @@ const router = createBrowserRouter([{
     },
     {
       path: 'checkout',
-      element: <Checkout />
+      element: <Checkout shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} setOrderId={setOrderId}/>
+    },
+    {
+      path: 'orderplaced',
+      element: <OrderPlaced orderId={orderId}/>
     }
 
 

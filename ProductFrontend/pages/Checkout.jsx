@@ -1,17 +1,58 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './checkout.module.css';
 
 
 
-function Checkout(){
+function Checkout({shoppingCart, setShoppingCart, setOrderId}) {
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const formJson = Object.fromEntries(formData.entries());
-        console.log('Form submitted:', formJson);
+        
+
+        const formatedData = {...formJson,
+                products: shoppingCart.map(prod => ({
+                    productId: prod._id,
+                    quantity: prod.quantity
+                })),
+                totalPrice: shoppingCart.reduce((total, prod) => total + (prod.price * prod.quantity), 0).toFixed(2),
+            };
+        console.log('Form submitted:', formatedData);
+        sendOrder(formatedData);
+
+
 
     }
+
+    const sendOrder = async (orderData) => {
+        try {
+            const response = await fetch('http://localhost:3000/api/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData),
+            });
+
+            if(response.ok){
+                const data = await response.json();
+                await setOrderId(data.orderId);
+                navigate('/orderplaced');
+                console.log('order sent successfully: ', data.orderId);
+            }else{
+                const error = await response;
+                console.error('Error sending order:', error);
+            }
+        } catch (error){
+            console.error('Network error:', error);
+        }
+    }
+
+
     return (
         <div className={styles.checkoutContainer}>
             <form className={styles.checkoutForm} onSubmit={handleSubmit}>
